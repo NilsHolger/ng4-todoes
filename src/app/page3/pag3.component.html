@@ -1,0 +1,33 @@
+<ons-toolbar>
+  <div class="left">
+      <ons-toolbar-button (click)="cancel()">
+        <ons-if platform="android">
+            <ons-icon icon="md-close"></ons-icon>
+        </ons-if>
+        <ons-if platform="ios other">
+            Cancel
+        </ons-if>
+      </ons-toolbar-button>
+  </div>
+  <div class="right">
+    <ons-toolbar-button (click)="save(todo)">
+      <ons-if platform="android">
+          <ons-icon icon="md-save"></ons-icon>
+      </ons-if>
+      <ons-if platform="ios other">
+          Save
+      </ons-if>
+    </ons-toolbar-button>
+  </div>
+  <div class="center">Edit</div>
+</ons-toolbar>
+<div class="content">
+    <ons-list>
+        <ons-list-item>
+            <input class="text-input" type="text" [(ngModel)]="todo.content">
+        </ons-list-item>
+    </ons-list>
+</div>
+<div class="bottom-bar">
+  <div class="bottom-bar__line-height red lighten-1 white-text" style="text-align:center">Angular Victory: Angular 4 Angular CLI Onsen UI 2</div>
+</div>

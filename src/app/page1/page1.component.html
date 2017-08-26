@@ -1,0 +1,23 @@
+<ons-toolbar class="red lighten-1">
+    <div class="center white-text">What needs to be done?</div>
+    <div class="right">
+      <ons-if platform="ios other">
+        <ons-toolbar-button class="white-text" (click)="add()">Add</ons-toolbar-button>
+      </ons-if>
+    </div>
+</ons-toolbar>
+<div class="content">
+  <ons-list>
+      <ons-list-item tappable modifier="chevron" *ngFor="let todo of todos$ | async" (click)="detail(todo)">
+        {{todo.content}}
+      </ons-list-item>
+  </ons-list>
+  <ons-if platform="android">
+    <ons-fab (click)="add()" position="bottom right">
+      <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
+  </ons-if>
+</div>
+<div class="bottom-bar">
+  <div class="bottom-bar__line-height red lighten-1 white-text" style="text-align:center">Angular Victory: Angular 4 Angular CLI Redux Onsen UI 2</div>
+</div>
